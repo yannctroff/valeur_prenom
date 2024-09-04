@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Générateur de Valeur de Prénom</title>
+    <style>
+        /* Styles existants */
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f0f0f5;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+            margin: 0;
+        }
+
+        p {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            font-size: 16px;
+            border: 2px solid #4CAF50;
+            border-radius: 5px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            color: white;
+            background-color: #4CAF50;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-left: 10px;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        h2 {
+            margin-top: 30px;
+            color: #333;
+        }
+
+        h3 {
+            margin-top: 40px;
+            color: #333;
+        }
+
+        table {
+            margin-top: 20px;
+            width: 60%;
+            margin-left: auto;
+            margin-right: auto;
+            border-collapse: collapse;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        th, td {
+            padding: 15px;
+            border: 1px solid #ddd;
+            text-align: center;
+            font-size: 18px;
+        }
+
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        td {
+            background-color: #f9f9f9;
+        }
+
+        tbody tr:hover {
+            background-color: #f1f1f1;
+        }
+
+        .export-buttons {
+            margin-top: 20px;
+        }
+
+        /* Styles pour l'icône d'information */
+        .info-icon {
+            font-size: 1.2em;
+            margin-left: 10px;
+            cursor: pointer;
+            color: #007BFF;
+        }
+
+        .info-icon:hover::after {
+            content: attr(title);
+            position: absolute;
+            background: #f9f9f9;
+            border: 1px solid #ddd;
+            padding: 5px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border-radius: 4px;
+            white-space: nowrap;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
+            display: block;
+        }
+
+        #classementGeneralTable {
+            display: none;
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        #classementGeneralTable th, #classementGeneralTable td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+
+        #classementGeneralTable th {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        #classementGeneralTable td {
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Générateur de valeur de prénom</h1>
+
+    <input type="text" id="prenomInput" placeholder="Entrez un prénom">
+    <button onclick="genererValeur()">Générer sa valeur</button>
+    <br><br>
+
+    <div id="resultat"></div>
+
+    <h2>Top 10</h2>
+    <table id="top10Table">
+        <thead>
+            <tr>
+                <th>Classement</th>
+                <th>Prénom</th>
+                <th>Valeur (€)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Les lignes du tableau seront ajoutées dynamiquement ici -->
+        </tbody>
+    </table>
+
+    <label>
+        <input type="checkbox" id="afficherClassementGeneral" onclick="afficherClassementGeneral()">
+        Afficher le classement général 
+        <span id="infoIcon" title="Le classement général s'ouvrira automatiquement dès le top 10 rempli">ℹ️</span>
+    </label>
+
+    <table id="classementGeneralTable">
+        <thead>
+            <tr>
+                <th>Classement</th>
+                <th>Prénom</th>
+                <th>Valeur (€)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Les lignes du tableau général seront ajoutées dynamiquement ici -->
+        </tbody>
+    </table>
+
+    <div class="export-buttons">
+        <button onclick="exporterTop10()">Exporter Top 10</button>
+        <button onclick="exporterTousLesResultats()">Exporter Tous les Résultats</button>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
