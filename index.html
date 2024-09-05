@@ -137,12 +137,61 @@
         #classementGeneralTable td {
             background-color: #f9f9f9;
         }
+
+/* Styles pour le footer */
+footer {
+    background-color: #4CAF50;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+}
+
+footer a {
+    display: inline-block;
+    text-align: center;
+}
+
+footer .github-button {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #333;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin: 0 auto; /* Centrer horizontalement le bouton */
+}
+
+footer .github-button:hover {
+    background-color: #555;
+}
+
+footer .github-logo {
+    width: 30px;
+    height: 30px;
+    fill: white;
+}
+
+footer p {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #f0f0f5;
+}
+
+
     </style>
 </head>
 <body>
 
     <h1>Générateur de valeur de prénom</h1>
-
+<br>
     <input type="text" id="prenomInput" placeholder="Entrez un prénom">
     <button onclick="genererValeur()">Générer sa valeur</button>
     <br><br>
@@ -188,6 +237,16 @@
     </div>
 
     <script src="script.js"></script>
-
+    <footer>
+        <a href="https://github.com/yannctroff/valeur_prenom" target="_blank">
+            <button class="github-button">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" alt="GitHub" class="github-logo">
+            </button>
+        </a>
+        <p>&copy; Yann CATTARIN &middot; 2024</p>
+    </footer>
+    
+    
 </body>
+
 </html>
