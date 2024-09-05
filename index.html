@@ -144,23 +144,12 @@ footer {
     color: white;
     padding: 20px;
     text-align: center;
-    width: 100%;
+    width: 97.1%;
     bottom: 0;
     left: 0;
+    margin-top: 151px;
 }
-/* Styles pour les écrans plus larges (ordinateurs et grandes tablettes) */
-@media (min-width: 1024px) {
-    footer {
-        position: fixed;
-        background-color: #4CAF50;
-    color: white;
-    padding: 20px;
-    text-align: center;
-    width: 100%;
-    bottom: 0;
-    left: 0;
-    }
-}
+
 
 
 footer a {
@@ -228,8 +217,9 @@ footer p {
     <label>
         <input type="checkbox" id="afficherClassementGeneral" onclick="afficherClassementGeneral()">
         Afficher le classement général 
-        <span id="infoIcon" title="Le classement général s'ouvrira automatiquement dès le top 10 rempli">ℹ️</span>
     </label>
+    <span id="infoIcon" title="Le classement général s'ouvrira automatiquement dès le top 10 rempli">ℹ️</span>
+
 
     <table id="classementGeneralTable">
         <thead>
