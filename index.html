@@ -4,12 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Générateur de Valeur de Prénom</title>
+    <link rel="icon" type="image/png" href="logo.png">
+
     <style>
         /* Styles existants */
         body {
             font-family: Arial, sans-serif;
             text-align: center;
-            background-color: #f0f0f5;
+            background-color: #d3d3d3;
             margin: 0;
             padding: 0;
         }
@@ -187,6 +189,35 @@ footer p {
     color: #f0f0f5;
 }
 
+ /* Bouton "i" rond */
+ .info-icon {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: #007BFF;
+            color: white;
+            text-align: center;
+            font-weight: bold;
+            cursor: pointer;
+            line-height: 20px;
+            margin-left: 10px;
+        }
+
+        /* Styles pour la bulle d'information */
+        .info-bubble {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            padding: 10px;
+            border-radius: 4px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 250px;
+            z-index: 10;
+            top: 50px;
+            left: calc(50% - 125px);
+        }
 
     </style>
 </head>
@@ -218,7 +249,13 @@ footer p {
         <input type="checkbox" id="afficherClassementGeneral" onclick="afficherClassementGeneral()">
         Afficher le classement général 
     </label>
-    <span id="infoIcon" title="Le classement général s'ouvrira automatiquement dès le top 10 rempli">ℹ️</span>
+    <span class="info-icon" onclick="toggleInfoBubble()">i</span>
+
+
+    <!-- La bulle d'information -->
+    <div class="info-bubble" id="infoBubble">
+        Le classement général s'ouvrira automatiquement dès que le top 10 sera rempli
+    </div>
 
 
     <table id="classementGeneralTable">
@@ -247,8 +284,19 @@ footer p {
             </button>
         </a>
         <p>&copy; Yann CATTARIN &middot; 2024</p>
+        <p><a href="support.html">Signalez un problème</a></p>
     </footer>
-    
+    <script>
+        // Fonction pour afficher/masquer la bulle d'information
+        function toggleInfoBubble() {
+            var infoBubble = document.getElementById("infoBubble");
+            if (infoBubble.style.display === "none" || infoBubble.style.display === "") {
+                infoBubble.style.display = "block";
+            } else {
+                infoBubble.style.display = "none";
+            }
+        }
+    </script>
     
 </body>
 

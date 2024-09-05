@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support - Signalement de Problème</title>
+    <!-- Lien vers le favicon -->
+    <link rel="icon" type="image/png" href="favicon.png">
+    <style>
+        /* Styles communs (même thème que index.html) */
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #d3d3d3;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+            margin: 0;
+        }
+
+        p {
+            font-size: 18px;
+        }
+
+        textarea {
+            width: 80%;
+            height: 150px;
+            padding: 10px;
+            font-size: 16px;
+            border: 2px solid #4CAF50;
+            border-radius: 5px;
+            resize: none;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            color: white;
+            background-color: #4CAF50;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        footer {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            width: 100%;
+            bottom: 0;
+            left: 0;
+        }
+
+        @media (min-width: 1024px) {
+            footer {
+                position: fixed;
+            }
+        }
+
+        footer a {
+            display: inline-block;
+            text-align: center;
+        }
+
+        footer .github-button {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: #333;
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin: 0 auto;
+        }
+
+        footer .github-button:hover {
+            background-color: #555;
+        }
+
+        footer .github-logo {
+            width: 30px;
+            height: 30px;
+            fill: white;
+        }
+
+        footer p {
+            margin-top: 10px;
+            font-size: 14px;
+            color: #f0f0f5;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Signalement de Problème</h1>
+
+    <p>Décrivez le problème que vous avez rencontré :</p>
+
+    <!-- Champ de texte pour décrire le problème -->
+    <textarea id="description" placeholder="Décrivez votre problème ici..."></textarea>
+    <br>
+    <!-- Bouton pour envoyer le mail -->
+    <button onclick="envoyerEmail()">Envoyer par mail</button>
+
+    <script>
+        // Fonction pour envoyer l'e-mail avec le contenu du textarea
+        function envoyerEmail() {
+            var description = document.getElementById("description").value;
+            var mailtoLink = "mailto:yann.cattarin@gmail.com?subject=SUPPORT%20SITE%20GITHUB%20-%20VALEUR%20PRENOM&body=" + encodeURIComponent(description);
+            window.location.href = mailtoLink;
+        }
+    </script>
+
+    <!-- Footer identique à la page d'accueil -->
+    <footer>
+        <a href="https://github.com/yannctroff/valeur_prenom" target="_blank">
+            <button class="github-button">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" alt="GitHub" class="github-logo">
+            </button>
+        </a>
+        <p>&copy; Yann CATTARIN &middot; 2024</p>
+        <p><a href="index.html">Retour à l'acceuil</a></p>
+
+    </footer>
+
+</body>
+</html>
