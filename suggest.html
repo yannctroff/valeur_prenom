@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Support - Signalement de Problème</title>
+    <title>Suggestion - Valeur Prénom</title>
     <!-- Lien vers le favicon -->
     <link rel="icon" type="image/png" href="favicon.png">
     <style>
@@ -11,7 +11,7 @@
         body {
             font-family: Arial, sans-serif;
             text-align: center;
-            background-color: #d3d3d3;
+            background-color: #f0f0f5;
             margin: 0;
             padding: 0;
         }
@@ -107,21 +107,21 @@
 </head>
 <body>
 
-    <h1>Signalement de Problème</h1>
+    <h1>Suggestion pour le site</h1>
 
-    <p>Décrivez le problème que vous avez rencontré :</p>
+    <p>Faites-nous part de vos suggestions :</p>
 
-    <!-- Champ de texte pour décrire le problème -->
-    <textarea id="description" placeholder="Décrivez votre problème ici..."></textarea>
+    <!-- Champ de texte pour décrire la suggestion -->
+    <textarea id="suggestion" placeholder="Décrivez votre suggestion ici..."></textarea>
     <br>
     <!-- Bouton pour envoyer le mail -->
-    <button onclick="envoyerEmail()">Envoyer par mail</button>
+    <button onclick="envoyerSuggestion()">Envoyer par mail</button>
 
     <script>
         // Fonction pour envoyer l'e-mail avec le contenu du textarea
-        function envoyerEmail() {
-            var description = document.getElementById("description").value;
-            var mailtoLink = "mailto:yann.cattarin@gmail.com?subject=SUPPORT%20SITE%20GITHUB%20-%20VALEUR%20PRENOM&body=" + encodeURIComponent(description);
+        function envoyerSuggestion() {
+            var suggestion = document.getElementById("suggestion").value;
+            var mailtoLink = "mailto:yann.cattarin@gmail.com?subject=SUGGESTION%20SITE%20GITHUB%20-%20VALEUR%20PRENOM&body=" + encodeURIComponent(suggestion);
             window.location.href = mailtoLink;
         }
     </script>
@@ -135,7 +135,8 @@
         </a>
         <p>&copy; Yann CATTARIN &middot; 2024</p>
         <p><a href="index.html">Retour à l'acceuil</a></p>
-        <p><a href="suggest.html">Suggérer une modification sur le site</a></p>
+        <p><a href="support.html">Signalez un problème</a></p>
+
 
     </footer>
 
